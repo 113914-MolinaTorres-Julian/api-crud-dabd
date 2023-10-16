@@ -1,0 +1,65 @@
+<div style="border: 1px solid grey; border-radius: 30px; padding: 50px; margin-top: 50px; margin-bottom: 50px;">
+    <h3>Crear Cliente</h3>
+    <form id="crearClienteForm">
+        <div class="row">
+            <!-- Primera columna -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre del Cliente">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" class="form-control" id="telefono" placeholder="Teléfono del Cliente">
+                </div>
+                <div class="form-group">
+                    <label for="tipoDocumento">Tipo de Documento:</label>
+                    <select class="form-control" id="tipoDocumento">
+                        <option value="DNI">DNI</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="numeroDocumento">Número de Documento/Pasaporte:</label>
+                    <input type="text" class="form-control" id="numeroDocumento" placeholder="Número de Documento/Pasaporte">
+                </div>
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido" placeholder="Apellido del Cliente">
+                </div>
+                <div class="form-group">
+                    <label for="mail">Email:</label>
+                    <input type="email" class="form-control" id="mail" placeholder="Email del Cliente">
+                </div>
+                <div class="form-group">
+                    <label for="categoriaFiscal">Categoría Fiscal:</label>
+                    <select class="form-control" id="categoriaFiscal">
+                        <option value="Monotributista">Monotributista</option>
+                        <option value="ResponsableInscripto">Responsable Inscripto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="categoriaMonotributista">Categoría Monotributista:</label>
+                    <select class="form-control" id="categoriaMonotributista">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                        <option value="K">K</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Guardar Cliente</button>
+    </form>
+</div>
