@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PostClienteComponent } from './post-cliente/post-cliente.component';
 import { PutClienteComponent } from './put-cliente/put-cliente.component';
 import { GetClientesComponent } from './get-clientes/get-clientes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GetClientesComponent } from './get-clientes/get-clientes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

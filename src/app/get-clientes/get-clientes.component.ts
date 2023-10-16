@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RestService } from '../servicios/rest.service';
 
 @Component({
   selector: 'app-get-clientes',
@@ -6,5 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./get-clientes.component.css']
 })
 export class GetClientesComponent {
+  public clientes:any = [];
+  public mostrarClientes = false;
 
+  constructor(private RestService:RestService) {}
+
+  ngOnInit(): void {
+    this.getClientes();
+  }
+
+  public cargarClientes() {
+    this.getClientes();
+    this.mostrarClientes = true;
+  }
+
+  public getClientes() {
+    this.RestService.getAll('https://my-json-server.typicode.com/113974-Olivera-Gustavo/api-clients-bd/clientes').subscribe( response => {
+      console.log(response);
+      this.clientes = response;
+    })
+  }
 }
