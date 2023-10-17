@@ -13,7 +13,7 @@ export class GetClientesComponent {
   constructor(private RestService:RestService) {}
 
   ngOnInit(): void {
-    this.getClientes();
+    this.cargarClientes();
   }
 
   public cargarClientes() {
