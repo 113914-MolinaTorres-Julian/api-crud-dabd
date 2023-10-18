@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     PostClienteComponent,
     PutClienteComponent,
     GetClientesComponent
+    
   ],
   imports: [
     BrowserModule,

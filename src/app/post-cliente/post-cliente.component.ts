@@ -7,23 +7,27 @@ import { RestService } from '../servicios/rest.service';
   styleUrls: ['./post-cliente.component.css']
 })
 export class PostClienteComponent {
-  datos = {
+  cliente = {
     nombre: '',
-    telefono: '',
-    tipoDocumento: 'DNI',
-    numeroDocumento: '',
     apellido: '',
-    mail: '',
-    categoriaFiscal: 'Monotributista',
-    categoriaMonotributista: 'A'
+    telefono: '',
+    email: '',
+    tipoDocumento: '',
+    numeroDocumento: '',
+    categoriaFiscal: '',
+    categoriaMonotributista: ''
   };
-  
-  resultado: any;
 
+  resultado: any;
+  monotributoBoolean:boolean = false;
   constructor(private RestService:RestService) {}
 
-  enviarDatos() {
-    this.RestService.postCliente(this.datos).subscribe(
+  monotributo(){
+    return this.monotributoBoolean = true;
+  }
+  
+  crearCliente() {
+    this.RestService.postCliente(this.cliente).subscribe(
       (response) => {
         this.resultado = response;
         console.log('POST Exitoso: ', this.resultado);

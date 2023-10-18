@@ -7,15 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class RestService {
 
-  private urlPost = "https://my-json-server.typicode.com/113974-Olivera-Gustavo/api-clients-bd/clientes";
+  private postUrl = "https://my-json-server.typicode.com/113974-Olivera-Gustavo/api-clients-bd/clientes";
 
   constructor(private http:HttpClient) { }
 
-  public getAll(url:string) {
+  public getAllClientes(url:string) {
     return this.http.get(url);
   }
 
-  public postCliente(datos: any): Observable<any> {
-    return this.http.post(this.urlPost, datos);
+  public postCliente(cliente: any): Observable<any> {
+    return this.http.post(this.postUrl, cliente);
   }
 }

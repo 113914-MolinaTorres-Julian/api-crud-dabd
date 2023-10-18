@@ -4,47 +4,52 @@
         <div class="row">
             <!-- Primera columna -->
             <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre del Cliente" name="nombre" [(ngModel)]="datos.nombre">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre del Cliente" name="nombre" [(ngModel)]="cliente.nombre">
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" class="form-control" id="telefono" placeholder="Teléfono del Cliente" name="telefono" [(ngModel)]="datos.telefono">
+                    <input type="tel" class="form-control" id="telefono" placeholder="Teléfono del Cliente" name="telefono" [(ngModel)]="cliente.telefono">
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="tipoDocumento">Tipo de Documento:</label>
-                    <select class="form-control" id="tipoDocumento" name="tipoDocumento" [(ngModel)]="datos.tipoDocumento">
-                        <option value="DNI">DNI</option>
-                        <option value="Pasaporte">Pasaporte</option>
+                    <select class="form-control" id="tipoDocumento" name="tipoDocumento" [(ngModel)]="cliente.tipoDocumento">
+                        <option value="">Seleccione un tipo de documento</option>
+                        <option value="dni">DNI</option>
+                        <option value="cuil">CUIL</option>
+                        <option value="cuit">CUIT</option>
                     </select>
+                      
                 </div>
-                <div class="form-group">
-                    <label for="numeroDocumento">Número de Documento/Pasaporte:</label>
-                    <input type="text" class="form-control" id="numeroDocumento" placeholder="Número de Documento/Pasaporte" name="numeroDocumento" [(ngModel)]="datos.numeroDocumento">
+                <div class="form-group mt-3">
+                    <label for="numeroDocumento">Número de Documento:</label>
+                    <input type="text" class="form-control" id="numeroDocumento" placeholder="Número de Documento" name="numeroDocumento" [(ngModel)]="cliente.numeroDocumento">
                 </div>
             </div>
 
             <!-- Segunda columna -->
             <div class="col-md-6">
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="apellido">Apellido:</label>
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido del Cliente" name="apellido" [(ngModel)]="datos.apellido">
+                    <input type="text" class="form-control" id="apellido" placeholder="Apellido del Cliente" name="apellido" [(ngModel)]="cliente.apellido">
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="mail">Email:</label>
-                    <input type="email" class="form-control" id="mail" placeholder="Email del Cliente" name="email" [(ngModel)]="datos.mail">
+                    <input type="email" class="form-control" id="mail" placeholder="Email del Cliente" name="email" [(ngModel)]="cliente.email">
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <label for="categoriaFiscal">Categoría Fiscal:</label>
-                    <select class="form-control" id="categoriaFiscal" name="categoriaFiscal" [(ngModel)]="datos.categoriaFiscal">
+                    <select class="form-control" id="categoriaFiscal" name="categoriaFiscal" [(ngModel)]="cliente.categoriaFiscal">
+                        <option value="" selected>Seleccione una categoría fiscal</option>
                         <option value="Monotributista">Monotributista</option>
                         <option value="ResponsableInscripto">Responsable Inscripto</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group mt-3" *ngIf="cliente.categoriaFiscal === 'Monotributista'">
                     <label for="categoriaMonotributista">Categoría Monotributista:</label>
-                    <select class="form-control" id="categoriaMonotributista" name="catMonotributo" [(ngModel)]="datos.categoriaMonotributista">
+                    <select class="form-control" id="categoriaMonotributista" name="catMonotributo" [(ngModel)]="cliente.categoriaMonotributista">
+                        <option value="" selected>Seleccione categoría monotributista</option>
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="C">C</option>
@@ -60,6 +65,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success mt-3" (click)="enviarDatos()">Guardar Cliente</button>
+        <button type="submit" class="btn btn-success mt-3" (click)="crearCliente()">Guardar Cliente</button>
     </form>
 </div>

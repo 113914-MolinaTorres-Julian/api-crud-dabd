@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RestService } from '../servicios/rest.service';
-
+import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-get-clientes',
   templateUrl: './get-clientes.component.html',
@@ -22,9 +22,9 @@ export class GetClientesComponent {
   }
 
   public getClientes() {
-    this.RestService.getAll('https://my-json-server.typicode.com/113974-Olivera-Gustavo/api-clients-bd/clientes').subscribe( response => {
+    this.RestService.getAllClientes('https://my-json-server.typicode.com/113974-Olivera-Gustavo/api-clients-bd/clientes').subscribe( response => {
       console.log(response);
-      this.clientes = response;
+      this.clientes = response
     })
   }
 }
